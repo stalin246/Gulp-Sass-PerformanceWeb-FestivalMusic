@@ -1,0 +1,82 @@
+@use 'variables' as v; // Importa el archivo '_variables.scss' y le asigna el alias 'v'
+
+// Estilos globales para el elemento html
+html {
+    font-size: 62.5%; // Establece el tamaño de fuente base a 62.5%, lo que facilita el uso de rem (1rem = 10px si el tamaño de fuente predeterminado es 16px)
+    box-sizing: border-box; // Aplica el modelo de caja border-box por defecto
+    scroll-padding-top: 0rem; // Añade un relleno de desplazamiento superior para una mejor experiencia de usuario
+}
+
+// Estilos globales para todos los elementos y sus pseudoelementos
+*,
+*:before,
+*:after {
+    box-sizing: inherit; // Hereda el box-sizing del elemento html
+}
+
+// Estilos globales para el body
+body {
+    font-family: v.$fuente_principal; // Aplica la fuente principal definida en el archivo '_variables.scss'
+    font-optical-sizing: auto; // Ajusta el tamaño óptico de la fuente automáticamente
+    font-style: normal; // Establece el estilo de la fuente como normal
+    color: v.$negro; // Aplica el color negro definido en las variables
+    font-size: 2rem; // Establece el tamaño de la fuente a 2rem (20px si el tamaño de fuente base es 10px)
+
+    &.overflow-hidden{ // Al body se agrega esa clase
+        overflow: hidden; // lo qeu se quede fuera del modal se quedara inmovil
+
+    }
+}
+
+// Estilos globales para el párrafo
+p {
+    color: v.$negro; // Aplica el color negro definido en las variables
+    line-height: 1.5; // Establece la altura de línea para mejorar la legibilidad
+}
+
+// Clase para un contenedor
+.contenedor {
+    width: 95%; // Establece el ancho al 95% del contenedor principal
+    max-width: 120rem; // Establece un ancho máximo de 120rem (1200px si el tamaño de fuente base es 10px)
+    margin: 0 auto; // Centra el contenedor horizontalmente
+}
+
+// Estilos globales para enlaces
+a {
+    text-decoration: none; // Elimina la subrayado predeterminado de los enlaces
+}
+
+// Estilos globales para encabezados h1, h2 y h3
+h1, h2, h3 {
+    margin: 0 0 5rem 0; // Elimina el margen superior y añade un margen inferior de 5rem
+    font-weight: 900; // Establece el peso de la fuente a 900 (negrita)
+}
+
+// Estilos específicos para h1
+h1 {
+    font-size: 4rem; // Establece el tamaño de la fuente a 4rem (40px si el tamaño de fuente base es 10px)
+}
+
+// Estilos específicos para h2
+h2 {
+    font-size: 4.6rem; // Establece el tamaño de la fuente a 4.6rem (46px si el tamaño de fuente base es 10px)
+}
+
+// Estilos específicos para h3
+h3 {
+    font-size: 6rem; // Establece el tamaño de la fuente a 6rem (60px si el tamaño de fuente base es 10px)
+    text-align: center; // Centra el texto
+}
+
+// Estilos globales para imágenes
+img {
+    max-width: 100%; // Establece el ancho máximo de la imagen al 100% del contenedor
+    width: 100%; // Establece el ancho de la imagen al 100% del contenedor
+    height: auto; // Mantiene la proporción de aspecto de la imagen
+    display: block; // Elimina el espacio en línea alrededor de la imagen
+}
+
+// Estilos globales para secciones dentro del body
+body > section { // Aplica solo para el primer nivel de las classes
+    padding: 9rem 0; // Añade un relleno de 10rem en la parte superior e inferior
+}

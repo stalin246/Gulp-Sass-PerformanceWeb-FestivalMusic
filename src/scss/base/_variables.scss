@@ -1,0 +1,19 @@
+// Variables
+
+// Define la fuente principal como "Montserrat" con un respaldo de sans-serif
+$fuente_principal: "Montserrat", sans-serif;
+
+// Colores
+$verde: #4CB8B3;   // Define el color verde
+$rosa: #F53756;    // Define el color rosa
+$amarillo: #fdda00; // Define el color amarillo
+$morado: #752F97;  // Define el color morado
+$negro: #000000;   // Define el color negro
+$blanco: #FFFFFF;  // Define el color blanco
+
+// Media Queries
+
+$telefono: 480px;  // Define el punto de ruptura para teléfonos
+$tablet: 768px;    // Define el punto de ruptura para tablets
+$desktop: 1200px;  // Define el punto de ruptura para desktops
+$desktopXL: 1400px; // Define el punto de ruptura para desktops extra grandes

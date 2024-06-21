@@ -1,0 +1,26 @@
+// _festival.scss
+
+// Importa las variables y mixins desde las rutas especificadas
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+// Estilos para la sección sobre el festival
+.sobre-festival {
+    @include m.contenedor; // Incluye el mixin contenedor para el estilo base del contenedor
+
+    @include m.tablet { // Incluye el mixin tablet para aplicar estilos en tablets
+        @include m.grid(2); // Aplica una rejilla de 2 columnas en tablets
+    }
+}
+
+// Estilos para el contenido del festival
+.contenido-festival {
+    margin-top: 5rem; // Aplica un margen superior de 5rem
+    h2 {
+        margin-bottom: 2rem; // Aplica un margen inferior de 2rem al elemento h2
+    }
+    .fecha {
+        color: v.$verde; // Aplica el color verde definido en las variables
+        font-weight: 700; // Define el peso de la fuente como 700 (negrita)
+    }
+}

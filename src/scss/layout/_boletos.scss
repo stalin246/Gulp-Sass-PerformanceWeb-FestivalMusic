@@ -1,0 +1,84 @@
+// _boletos.scss
+
+// Importa las variables y mixins desde las rutas especificadas
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+// Estilos para el contenedor de boletos
+.contenedor-boletos {
+    background-color: v.$verde; // Aplica el color de fondo definido en las variables
+
+    h3 {
+        color: v.$blanco; // Aplica el color blanco al texto h3
+    }
+
+    .boletos {
+        @include m.contenedor; // Incluye el mixin contenedor para el estilo base del contenedor
+        @include m.tablet { // Incluye el mixin tablet para aplicar estilos en tablets
+            @include m.grid(2); // Aplica una rejilla de 2 columnas en tablets
+        }
+    }
+}
+
+// Estilos para el pase
+.pase {
+    transition: transform .3s ease-in-out; // Agrega la duración y el tipo de comportamiento de la transición para el efecto hover
+
+    &:hover {
+        transform: scale(1.1); // Aumenta la escala del elemento a un 10% al hacer hover
+    }
+
+    &-nombre { // Estilos para el nombre del pase
+        font-size: 3.6rem; // Define el tamaño de la fuente
+        font-weight: 900; // Define el peso de la fuente como negrita
+        text-align: center; // Centra el texto
+        color: v.$blanco; // Aplica el color blanco al texto
+    }
+
+    &-header,
+    &-footer {
+        padding: .5rem; // Aplica relleno (padding) de 0.5rem
+        p {
+            text-align: center; // Centra el texto
+            color: v.$blanco; // Aplica el color blanco al texto
+            margin: 0; // Elimina el margen
+        }
+    }
+
+    &-header {
+        background-color: v.$rosa; // Aplica el color rosa al fondo del encabezado
+        p {
+            text-transform: uppercase; // Transforma el texto a mayúsculas
+            font-size: 2.2rem; // Define el tamaño de la fuente
+            padding: 1rem 0; // Aplica relleno (padding) de 1rem en la parte superior e inferior
+        }
+    }
+
+    &-body {
+        background-color: v.$blanco; // Aplica el color blanco al fondo del cuerpo
+        ul {  
+            @include m.reiniciar-lista; // Reinicia los estilos de la lista
+            li {
+                padding: 2rem; // Aplica relleno (padding) de 2rem a los elementos de la lista
+                border-bottom: 1px solid #e1e1e1; // Aplica un borde inferior gris claro
+            }
+        }
+    }
+
+    &-footer {
+        background-color: v.$blanco; // Aplica el color blanco al fondo del pie de página
+        padding: 3rem; // Aplica relleno (padding) de 3rem
+        p {
+            font-size: 2.8rem; // Define el tamaño de la fuente
+            font-weight: 900; // Define el peso de la fuente como negrita
+            background-color: v.$morado; // Aplica el color morado al fondo
+            padding: 1rem 0; // Aplica relleno (padding) de 1rem en la parte superior e inferior
+            border-radius: 1rem; // Aplica un borde redondeado de 1rem
+            cursor: pointer; // Cambia el cursor a pointer al pasar sobre el elemento
+
+            &:hover {
+                background-color: darken(v.$morado, 20); // Oscurece el color morado en un 20% al hacer hover
+            }
+        }
+    }
+}

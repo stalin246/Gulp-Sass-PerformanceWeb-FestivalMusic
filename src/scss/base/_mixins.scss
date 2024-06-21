@@ -1,0 +1,53 @@
+// _mixins.scss
+
+// Importa las variables desde el archivo 'variables' y las usa con el alias 'v'
+@use 'variables' as v;
+
+// Define un mixin para media queries en dispositivos móviles (teléfonos)
+@mixin telefono {
+    @media (min-width: v.$telefono) {
+        @content; // Permite agregar más contenido/propiedades cuando se usa el mixin en un selector
+    }
+}
+
+// Define un mixin para media queries en dispositivos tipo tablet
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content; 
+    }
+}
+
+// Define un mixin para media queries en pantallas de escritorio estándar
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content; // Permite agregar más contenido/propiedades cuando se usa el mixin en un selector
+    }
+}
+
+// Define un mixin para media queries en pantallas de escritorio grandes (extra grandes)
+@mixin desktopXL {
+    @media (min-width: v.$desktopXL) {
+        @content; // Permite agregar más contenido/propiedades cuando se usa el mixin en un selector
+    }
+}
+
+// Define un mixin para un contenedor centralizado con ancho máximo
+@mixin contenedor {
+    width: 95%; // Establece el ancho al 95% del contenedor principal
+    max-width: 120rem; // Establece un ancho máximo de 120rem (1200px si el tamaño de fuente base es 10px)
+    margin: 0 auto; // Centra el contenedor horizontalmente
+}
+
+// Define un mixin para crear una rejilla (grid) con un número especificado de columnas y espacio entre ellas
+@mixin grid($columnas: 1, $gap: 5rem) {
+    display: grid; // Utiliza la propiedad CSS de rejilla
+    grid-template-columns: repeat($columnas, 1fr); // Define el número de columnas en la rejilla
+    gap: $gap; // Establece el espacio entre los elementos de la rejilla
+}
+
+// Define un mixin para reiniciar los estilos de una lista, eliminando el margen, el relleno y los puntos de lista
+@mixin reiniciar-lista {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

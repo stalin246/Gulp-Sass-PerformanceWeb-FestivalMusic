@@ -1,0 +1,29 @@
+{
+  "name": "festivalmusicalv",
+  "version": "1.0.0",
+  "description": "Comienzo en SASS y uso de NPM",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "sass": "sass --watch src/scss:dist/css",
+    "dev": "gulp"
+  },
+  "keywords": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "SASS",
+    "NPM",
+    "Gulp"
+  ],
+  "author": "Luis Valencia",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "sass": "^1.77.6"
+  },
+  "dependencies": {
+    "gulp-sass": "^5.1.0",  
+    "save-dev": "^0.0.1-security"
+  }
+}

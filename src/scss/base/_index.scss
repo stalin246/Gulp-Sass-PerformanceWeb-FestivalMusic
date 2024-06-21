@@ -1,0 +1,12 @@
+// _index.scss
+
+// Acceder a los contenidos de las hojas de estilos que están en la carpeta 'base'
+
+// Importa y reenvía el archivo 'normalize' para asegurar consistencia en los estilos predeterminados del navegador
+@forward 'normalize';
+
+// Importa y reenvía el archivo 'variables' que contiene las variables globales del proyecto
+@forward 'variables';
+
+// Importa y reenvía el archivo 'globales' que contiene estilos globales y mixins
+@forward 'globales';

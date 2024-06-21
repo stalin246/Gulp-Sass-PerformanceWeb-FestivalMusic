@@ -1,0 +1,16 @@
+// _footer.scss
+
+// Importa las variables desde la ruta especificada
+@use 'base/variables' as v; 
+
+// Estilos para el pie de página
+.footer {
+    background-color: v.$rosa; // Aplica el color de fondo definido en las variables
+    padding: 2rem 0; // Aplica un relleno (padding) de 2rem en la parte superior e inferior
+
+    p {
+        margin: 0; // Elimina el margen
+        color: v.$blanco; // Aplica el color blanco al texto
+        text-align: center; // Centra el texto
+    }
+}

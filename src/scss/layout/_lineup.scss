@@ -1,0 +1,65 @@
+// _lineup.scss
+
+// Importa las variables y mixins desde las rutas especificadas
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+// Estilos para la sección de lineup
+.lineup {
+    background-color: v.$rosa; // Aplica el color de fondo definido por la variable $rosa
+    h3, .dia {
+        text-align: center; // Alinea el texto al centro
+        color: v.$blanco; // Aplica el color blanco al texto
+    }
+    .dia {
+        font-size: 3rem; // Establece el tamaño de la fuente a 3rem
+        text-transform: uppercase; // Transforma el texto a mayúsculas
+    }
+}
+
+// Estilos para el contenedor de escenarios
+.escenarios-contenedor {
+    @include m.contenedor; // Incluye el mixin contenedor para el estilo base del contenedor
+    @include m.tablet {
+        @include m.grid(2); // Aplica una rejilla de 2 columnas en tablets
+    }
+}
+
+// Estilos para los escenarios
+.escenario {
+    padding-top: 2rem; // Aplica un relleno (padding) en la parte superior de 2rem
+    .nombre-escenario {
+        font-size: 3rem; // Establece el tamaño de la fuente a 3rem
+        font-weight: 900; // Define el peso de la fuente como 900 (negrita)
+        text-transform: uppercase; // Transforma el texto a mayúsculas
+        text-align: center; // Alinea el texto al centro
+    }
+}
+
+// Estilos para el calendario
+.calendario {
+    @include m.reiniciar-lista; // Reinicia los estilos de la lista
+    li {
+        padding: 2.5rem; // Aplica un relleno (padding) de 2.5rem a los elementos de la lista
+        font-weight: 700; // Define el peso de la fuente como 700 (negrita)
+        span {
+            font-weight: 400; // Define el peso de la fuente como 400 para los elementos span
+        }
+    }
+}
+
+// Estilos para el fondo amarillo
+.bg-amarillo {
+    background-color: v.$amarillo; // Aplica el color de fondo definido por la variable $amarillo
+    li:nth-child(odd) { // Aplica el siguiente estilo a los elementos li impares
+        background-color: lighten(v.$amarillo, 5%); // Aclara el color amarillo en un 5%
+    }
+}
+
+// Estilos para el fondo verde
+.bg-verde {
+    background-color: v.$verde; // Aplica el color de fondo definido por la variable $verde
+    li:nth-child(odd) { // Aplica el siguiente estilo a los elementos li impares
+        background-color: lighten(v.$verde, 5%); // Aclara el color verde en un 5%
+    }
+}

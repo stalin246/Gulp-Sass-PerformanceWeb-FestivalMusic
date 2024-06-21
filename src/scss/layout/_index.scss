@@ -1,0 +1,22 @@
+// _index.scss
+
+// Importa y reenvía los estilos del header
+@forward 'header';
+
+// Importa y reenvía los estilos del video
+@forward 'video';
+
+// Importa y reenvía los estilos del festival
+@forward 'festival';
+
+// Importa y reenvía los estilos del lineup (programa de eventos o artistas)
+@forward 'lineup';
+
+// Importa y reenvía los estilos de los boletos
+@forward 'boletos';
+
+// Importa y reenvía los estilos del footer
+@forward 'footer';
+
+// Importa y reenvía los estilos de la galería
+@forward 'galeria';

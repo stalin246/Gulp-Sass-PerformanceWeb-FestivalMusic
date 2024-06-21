@@ -1,0 +1,59 @@
+// _video.scss
+
+// Importa las variables y mixins desde las rutas especificadas
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+// Estilos para la sección de video
+.video {
+    position: relative; // Establece la posición relativa para el contenedor del video
+    min-height: 50rem; // Establece una altura mínima de 50rem
+    max-height: 70rem; // Establece una altura máxima de 70rem
+    overflow: hidden; // Oculta cualquier contenido que se desborde
+
+    // Estilos para la superposición (overlay) del video
+    .overlay {
+        position: absolute; // Posiciona el overlay de manera absoluta
+        background: linear-gradient(
+            270deg,
+            rgba(v.$morado, 60%), // Aplica un gradiente lineal con el color morado al 60%
+            rgba(darken(v.$morado, 20%), 90%) // Aplica un gradiente lineal con el color morado oscuro al 90%
+        );
+        inset: 0; // Establece los cuatro lados del overlay a 0 para ocupar todo el contenedor
+        display: flex; // Utiliza flexbox para alinear los elementos hijos
+        align-items: center; // Alinea los elementos hijos verticalmente en el centro
+    }
+
+    // Estilos para el elemento de video
+    video {
+        display: block; // Establece el video como un elemento de bloque
+        width: auto; // Establece el ancho automático
+
+        @include m.desktop {
+            width: 100%; // Establece el ancho al 100% en pantallas de escritorio
+        }
+    }
+}
+
+// Estilos para el contenido del video
+.contenido-video {
+    z-index: 10; // Establece el índice z para asegurar que el contenido esté por encima del video
+
+    // Estilos para el elemento h2 dentro de .contenido-video
+    h2 {
+        color: v.$blanco; // Aplica el color blanco al texto
+        font-size: 7rem; // Establece el tamaño de la fuente a 7rem
+        margin: 0; // Elimina el margen
+    }
+
+    // Estilos para el elemento p dentro de .contenido-video
+    p {
+        background-color: v.$rosa; // Aplica el color de fondo rosa
+        display: inline-block; // Establece el párrafo como un elemento en línea con comportamiento de bloque
+        padding: 1rem 2rem; // Aplica un relleno de 1rem en la parte superior e inferior, y 2rem en los lados
+        color: v.$blanco; // Aplica el color blanco al texto
+        font-size: 2.4rem; // Establece el tamaño de la fuente a 2.4rem
+        font-weight: 700; // Define el peso de la fuente como 700 (negrita)
+        margin: 0; // Elimina el margen
+    }
+}

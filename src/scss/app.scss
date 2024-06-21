@@ -1,0 +1,11 @@
+// app.scss
+
+// Reenvía todos los estilos y variables desde el módulo 'base'.
+// Este módulo generalmente contiene variables, mixins y estilos fundamentales
+// que se utilizan en todo el proyecto.
+@forward 'base';
+
+// Reenvía todos los estilos y variables desde el módulo 'layout'.
+// Este módulo suele contener estilos relacionados con la estructura de la página,
+// como diseños de grid, contenedores y otros elementos de layout.
+@forward 'layout';

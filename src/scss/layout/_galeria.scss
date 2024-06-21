@@ -1,0 +1,83 @@
+// _galeria.scss
+
+// Importa las variables y mixins desde las rutas especificadas
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+// Estilos para la galería
+.galeria {
+    @include m.contenedor; // Incluye el mixin contenedor para el estilo base del contenedor
+
+    &-imagenes {
+        @include m.grid(1, 2rem); // Aplica una rejilla de 1 columna con un espacio de 2rem entre elementos
+
+        @include m.telefono {
+            @include m.grid(2, 2rem); // Aplica una rejilla de 2 columnas con un espacio de 2rem entre elementos en teléfonos
+        }
+        @include m.tablet {
+            @include m.grid(3, 2rem); // Aplica una rejilla de 3 columnas con un espacio de 2rem entre elementos en tablets
+        }
+        @include m.desktop {
+            @include m.grid(4, 2rem); // Aplica una rejilla de 4 columnas con un espacio de 2rem entre elementos en desktops
+        }
+
+        img {
+            height: 20rem; // Establece la altura de las imágenes a 20rem
+            object-fit: cover; // Ajusta el tamaño de la imagen para cubrir su contenedor
+        }
+    }
+}
+
+// Estilos para el modal
+.modal {
+    position: fixed; // Posiciona el modal de manera fija
+    inset: 0; // Establece los cuatro lados del modal a 0 para ocupar toda la pantalla
+    background-color: rgba(v.$negro, 0.5); // Aplica un fondo semitransparente de color negro
+    display: grid; // Utiliza la propiedad de rejilla
+    place-items: center; // Centra el contenido dentro de la rejilla
+    animation: fadeIn ease-in 0.5s; // Aplica la animación de entrada fadeIn
+
+    &.fade-Out {
+        display: grid; // Utiliza la propiedad de rejilla
+        animation: fadeOut ease-in 0.5s; // Aplica la animación de salida fadeOut
+    }
+
+    img {
+        max-width: 100rem; // Establece un ancho máximo de 100rem para las imágenes dentro del modal
+    }
+}
+
+// Estilos para el botón de cerrar
+.btn-cerrar {
+    width: 4rem; // Establece el ancho del botón a 4rem
+    height: 4rem; // Establece la altura del botón a 4rem
+    border-radius: 50%; // Aplica un borde redondeado completo (círculo)
+    background-color: v.$blanco; // Aplica el color de fondo blanco
+    border: none; // Elimina el borde del botón
+    color: v.$negro; // Aplica el color negro al texto del botón
+    display: grid; // Utiliza la propiedad de rejilla
+    place-items: center; // Centra el contenido dentro de la rejilla
+    font-weight: 700; // Establece el peso de la fuente a 700 (negrita)
+    cursor: pointer; // Cambia el cursor a pointer al pasar sobre el botón
+}
+
+// Keyframes para animaciones
+// Animación de entrada
+@keyframes fadeIn {
+    0% {
+        opacity: 0; // Opacidad inicial de 0
+    }
+    100% {
+        opacity: 1; // Opacidad final de 1
+    }
+}
+
+// Animación de salida
+@keyframes fadeOut {
+    0% {
+        opacity: 1; // Opacidad inicial de 1
+    }
+    100% {
+        opacity: 0; // Opacidad final de 0
+    }
+}

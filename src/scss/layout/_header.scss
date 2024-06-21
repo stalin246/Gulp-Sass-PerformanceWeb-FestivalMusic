@@ -1,0 +1,64 @@
+// _header.scss
+
+// Importa el archivo '_variables.scss' desde la carpeta 'base' y le asigna el alias 'v'
+@use 'base/variables' as v; 
+@use 'base/mixins' as m;
+
+// Estilos para el contenedor .header
+.header {
+    background-color: v.$verde; // Aplica el color de fondo definido por la variable $verde
+
+    @include m.tablet {
+        &.fixed {
+            position: fixed; // Posiciona el header de manera fija
+            left: 0;
+            top: 0;
+            width: 100%; // Establece el ancho al 100%
+            box-shadow: .1rem .2rem .3rem #333; // Añade una sombra al header
+        }
+    }
+
+    // Estilos para el elemento .contenido-header dentro de .header
+    .contenido-header {
+        padding: 2rem; // Añade un relleno de 2rem alrededor del contenido
+
+        @include m.tablet {
+            display: flex; // Utiliza flexbox para alinear los elementos hijos
+            justify-content: space-between; // Distribuye los elementos hijos con espacio igual entre ellos
+            align-items: center; // Alinea los elementos hijos verticalmente en el centro
+        }
+    }
+
+    // Estilos para el elemento h1 dentro de .header
+    h1 {
+        color: v.$blanco; // Aplica el color de texto definido por la variable $blanco
+        text-align: center; // Alinea el texto al centro
+
+        @include m.tablet {
+            margin: 0; // Elimina el margen alrededor del elemento h1
+        }
+    }
+}
+
+// Estilos para el contenedor .navegacion-principal
+.navegacion-principal {
+    display: flex; // Utiliza flexbox para la disposición de los elementos
+    flex-direction: column; // Organiza los elementos en una columna
+    align-items: center; // Alinea los elementos horizontalmente en el centro
+    gap: 2rem; // Añade un espacio de 2rem entre los elementos
+
+    @include m.tablet {
+        flex-direction: row; // Organiza los elementos en una fila en pantallas de tablets
+    }
+
+    // Estilos para los elementos a (enlaces) dentro de .navegacion-principal
+    a {
+        color: v.$blanco; // Aplica el color de texto definido por la variable $blanco
+        font-size: 2.4rem; // Establece el tamaño de la fuente
+
+        &:hover,
+        &.active { // Estilos para el estado hover y active de los enlaces
+            color: v.$amarillo; // Aplica el color amarillo al texto
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "festivalmusicalv", // Nombre del proyecto
+  "version": "1.0.0", // Versión del proyecto
+  "description": "Comienzo en SASS y uso de NPM", // Descripción del proyecto
+  "main": "index.js", // Punto de entrada principal del proyecto
+  "type": "module", // Tipo de módulo (ES Module)
+  "scripts": {
+    "sass": "sass --watch src/scss:dist/css", // Script para observar y compilar archivos SASS a CSS
+    "dev": "gulp" // Script para ejecutar Gulp y automatizar tareas
+  },
+  "keywords": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "SASS",
+    "NPM",
+    "Gulp"
+  ], // Palabras clave relacionadas con el proyecto
+  "author": "Luis Valencia", // Autor del proyecto
+  "license": "ISC", // Licencia del proyecto
+  "devDependencies": {
+    "gulp": "^5.0.0", // Dependencia de desarrollo para Gulp
+    "sass": "^1.77.6" // Dependencia de desarrollo para Sass
+  },
+  "dependencies": {
+    "gulp-sass": "^5.1.0", // Dependencia para Gulp-Sass
+    "save-dev": "^0.0.1-security" // Dependencia adicional de desarrollo (probablemente no necesaria)
+  }
+}
