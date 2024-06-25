@@ -19,11 +19,14 @@
   "author": "Luis Valencia",
   "license": "ISC",
   "devDependencies": {
+    "glob": "^10.4.2",
     "gulp": "^5.0.0",
     "sass": "^1.77.6"
   },
   "dependencies": {
-    "gulp-sass": "^5.1.0",  
-    "save-dev": "^0.0.1-security"
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
+    "save-dev": "^0.0.1-security",
+    "sharp": "^0.33.4"
   }
 }
